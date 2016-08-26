@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="Invalid-Credentials">
+            <Step>
+                <Name>Invalid-Credentials</Name>
+            </Step>
+            <Condition>(cred.response.status.code GreaterThan "200")</Condition>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Generate Token">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Extract-Credentials</Name>
+                </Step>
+                <Step>
+                    <Name>Validate Credentials Request</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-Credentials-Response</Name>
+                </Step>
+                <Step>
+                    <Name>Set-External-Auth</Name>
+                </Step>
+                <Step>
+                    <Name>Extract-User-Attributes</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-OAuth-Token</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/oauth</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

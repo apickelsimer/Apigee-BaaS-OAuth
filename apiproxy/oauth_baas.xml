@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="oauth_baas">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1472092213222</CreatedAt>
+    <CreatedBy>defaultUser</CreatedBy>
+    <Description></Description>
+    <DisplayName>oauth</DisplayName>
+    <LastModifiedAt>1472092213222</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <Policies>
+        <Policy>Extract-Credentials</Policy>
+        <Policy>Extract-User-Attributes</Policy>
+        <Policy>Generate-OAuth-Token</Policy>
+        <Policy>Invalid-Credentials</Policy>
+        <Policy>Set-External-Auth</Policy>
+        <Policy>Validate Credentials Request</Policy>
+        <Policy>Validate-Credentials-Response</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-User-Attributes">
+    <DisplayName>Extract User Attributes</DisplayName>
+    <Properties/>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="usrAttr1" type="string">
+            <JSONPath>$.user.email</JSONPath>
+        </Variable>
+        <Variable name="usrAttr2" type="string">
+            <JSONPath>$.user.picture</JSONPath>
+        </Variable>
+        <Variable name="usrAttr3" type="string">
+            <JSONPath>$.user.activated</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">cred.response</Source>
+</ExtractVariables>

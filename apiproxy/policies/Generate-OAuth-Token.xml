@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Generate-OAuth-Token">
+    <DisplayName>Generate OAuth Token</DisplayName>
+    <Operation>GenerateAccessToken</Operation>
+    <ExpiresIn>360000000</ExpiresIn>
+    <SupportedGrantTypes>
+        <GrantType>password</GrantType>
+    </SupportedGrantTypes>
+    <GrantType>grant</GrantType>
+    <UserName>usr</UserName>
+    <PassWord>pwd</PassWord>
+    <Attributes>
+        <Attribute name="customAttribute1" ref="usrAttr1" display="true"/>
+        <Attribute name="customAttribute2" ref="usrAttr2" display="true"/>
+        <Attribute name="customAttribute3" ref="usrAttr3" display="true"/>
+    </Attributes>
+    <GenerateResponse enabled="true"/>
+</OAuthV2>
